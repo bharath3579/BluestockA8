@@ -1,0 +1,129 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Main content styles */
+  .main-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 200px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 1rem;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+  }
+  
+  .sidebar li {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar li:hover {
+    background-color: #2c3e50;
+  }
+  
+  /* Page content styles */
+  .page-content {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  /* Dashboard styles */
+  .dashboard {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* IPO List styles */
+  .ipo-list {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ipo-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .ipo-list th, .ipo-list td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .ipo-list th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* IPO Form styles */
+  .ipo-form {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ipo-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .ipo-form input, .ipo-form select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  .ipo-form button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .ipo-form button:hover {
+    background-color: #2980b9;
+  }
