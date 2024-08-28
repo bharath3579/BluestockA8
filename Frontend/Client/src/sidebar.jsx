@@ -12,7 +12,7 @@ const Sidebar = () => {
         </li>
         <li className="flex items-center space-x-2">
           <FaChartLine />
-          <a href='/'>Manage IPO</a>
+          <Link to="/manageipo">Manage IPO</Link>
         </li>
         <li className="flex items-center space-x-2">
           <FaCog />
