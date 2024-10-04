@@ -1,53 +1,54 @@
 import React from 'react';
+import { FaTrashAlt, FaEye } from 'react-icons/fa';
 
 const IPOTable = () => {
-    const ipos = [
-        {
-          company: 'Adani Power',
-          priceBand: '₹ 129 - 136',
-          open: '2024-06-03',
-          close: '2024-06-05',
-          issueSize: '130.15 Cr.',
-          issueType: 'Book Built',
-          listingDate: '2024-06-10',
-          status: 'Ongoing',
-        },
-        {
-          company: 'VBL LTD',
-          priceBand: '₹ 129 - 136',
-          open: '2024-06-03',
-          close: '2024-06-05',
-          issueSize: '130.15 Cr.',
-          issueType: 'Book Built',
-          listingDate: '2024-06-10',
-          status: 'Coming',
-        },
-        {
-          company: 'Tata Motor',
-          priceBand: '₹ 129 - 136',
-          open: '2024-06-03',
-          close: '2024-06-05',
-          issueSize: '130.15 Cr.',
-          issueType: 'Book Built',
-          listingDate: '2024-06-10',
-          status: 'New Listed',
-        },
-        {
-          company: 'BSE India',
-          priceBand: '₹ 129 - 136',
-          open: '2024-06-03',
-          close: '2024-06-05',
-          issueSize: '130.15 Cr.',
-          issueType: 'Book Built',
-          listingDate: '2024-06-10',
-          status: 'New Listed',
-        },
-      ];
+  const ipos = [
+    {
+      company: 'Adani Power',
+      priceBand: '₹ 129 - 136',
+      open: '2024-06-03',
+      close: '2024-06-05',
+      issueSize: '130.15 Cr.',
+      issueType: 'Book Built',
+      listingDate: '2024-06-10',
+      status: 'Ongoing',
+    },
+    {
+      company: 'VBL LTD',
+      priceBand: '₹ 129 - 136',
+      open: '2024-06-03',
+      close: '2024-06-05',
+      issueSize: '130.15 Cr.',
+      issueType: 'Book Built',
+      listingDate: '2024-06-10',
+      status: 'Coming',
+    },
+    {
+      company: 'Tata Motor',
+      priceBand: '₹ 129 - 136',
+      open: '2024-06-03',
+      close: '2024-06-05',
+      issueSize: '130.15 Cr.',
+      issueType: 'Book Built',
+      listingDate: '2024-06-10',
+      status: 'New Listed',
+    },
+    {
+      company: 'BSE India',
+      priceBand: '₹ 129 - 136',
+      open: '2024-06-03',
+      close: '2024-06-05',
+      issueSize: '130.15 Cr.',
+      issueType: 'Book Built',
+      listingDate: '2024-06-10',
+      status: 'New Listed',
+    },
+  ];
 
   return (
     <div className="ml-64 p-6 bg-white min-h-screen static">
       <h2 className="text-xl font-semibold mb-4">Upcoming IPO | Dashboard</h2>
-      <table className="min-w-full bg-white shadow-md rounded-lg ">
+      <table className="min-w-full bg-white shadow-md rounded-lg">
         <thead className="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
           <tr>
             <th className="py-3 px-6 text-left">Company</th>
@@ -65,7 +66,7 @@ const IPOTable = () => {
         <tbody className="text-gray-600 text-sm font-light">
           {ipos.map((ipo, index) => (
             <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
-              <td className="py-3 px-6 text-left whitespace-nowrap">
+              <td className="py-3 px-6 text-left whitespace-nowrap">uhj9
                 {ipo.company}
               </td>
               <td className="py-3 px-6 text-left">{ipo.priceBand}</td>
@@ -88,14 +89,16 @@ const IPOTable = () => {
                 </span>
               </td>
               <td className="py-3 px-6 text-left">
-                <button className="bg-blue-500 text-white px-3 py-1 rounded-lg text-xs">Update</button>
+                <button className="bg-blue-500 text-white px-3 py-1 rounded-lg text-xs">
+                  Update
+                </button>
               </td>
-              <td className="py-3 px-6 text-left">
+              <td className="py-3 px-6 text-left flex items-center">
                 <button className="text-red-500 hover:text-red-700 mr-2">
-                  <i className="fas fa-trash-alt"></i>
+                  <FaTrashAlt />
                 </button>
                 <button className="text-blue-500 hover:text-blue-700">
-                  <i className="fas fa-eye"></i>
+                  <FaEye />
                 </button>
               </td>
             </tr>
