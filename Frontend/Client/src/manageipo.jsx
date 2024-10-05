@@ -1,49 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaTrashAlt, FaEye } from 'react-icons/fa';
+import axios from 'axios';
 
 const IPOTable = () => {
-  const ipos = [
-    {
-      company: 'Adani Power',
-      priceBand: '₹ 129 - 136',
-      open: '2024-06-03',
-      close: '2024-06-05',
-      issueSize: '130.15 Cr.',
-      issueType: 'Book Built',
-      listingDate: '2024-06-10',
-      status: 'Ongoing',
-    },
-    {
-      company: 'VBL LTD',
-      priceBand: '₹ 129 - 136',
-      open: '2024-06-03',
-      close: '2024-06-05',
-      issueSize: '130.15 Cr.',
-      issueType: 'Book Built',
-      listingDate: '2024-06-10',
-      status: 'Coming',
-    },
-    {
-      company: 'Tata Motor',
-      priceBand: '₹ 129 - 136',
-      open: '2024-06-03',
-      close: '2024-06-05',
-      issueSize: '130.15 Cr.',
-      issueType: 'Book Built',
-      listingDate: '2024-06-10',
-      status: 'New Listed',
-    },
-    {
-      company: 'BSE India',
-      priceBand: '₹ 129 - 136',
-      open: '2024-06-03',
-      close: '2024-06-05',
-      issueSize: '130.15 Cr.',
-      issueType: 'Book Built',
-      listingDate: '2024-06-10',
-      status: 'New Listed',
-    },
-  ];
+  const [ipos, setIpos] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get('http://localhost:5000/api/ipos');
+      setIpos(result.data);
+    };
+
+    fetchData();
+  }, []);
+
+  const deleteIPO = async (id) => {
+    await axios.delete(`http://localhost:5000/api/ipos/${id}`);
+    setIpos(ipos.filter((ipo) => ipo._id !== id));
+  };
 
   return (
     <div className="ml-64 p-6 bg-white min-h-screen static">
@@ -66,9 +40,7 @@ const IPOTable = () => {
         <tbody className="text-gray-600 text-sm font-light">
           {ipos.map((ipo, index) => (
             <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
-              <td className="py-3 px-6 text-left whitespace-nowrap">uhj9
-                {ipo.company}
-              </td>
+              <td className="py-3 px-6 text-left">{ipo.company}</td>
               <td className="py-3 px-6 text-left">{ipo.priceBand}</td>
               <td className="py-3 px-6 text-left">{ipo.open}</td>
               <td className="py-3 px-6 text-left">{ipo.close}</td>
@@ -94,7 +66,10 @@ const IPOTable = () => {
                 </button>
               </td>
               <td className="py-3 px-6 text-left flex items-center">
-                <button className="text-red-500 hover:text-red-700 mr-2">
+                <button
+                  className="text-red-500 hover:text-red-700 mr-2"
+                  onClick={() => deleteIPO(ipo._id)}
+                >
                   <FaTrashAlt />
                 </button>
                 <button className="text-blue-500 hover:text-blue-700">

@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/ipoDB', {
+    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/ipoDB', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
